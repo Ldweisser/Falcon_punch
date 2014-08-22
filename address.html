@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Supportsync Address</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/sb-admin.css" rel="stylesheet">
+
+    <!-- Morris Charts CSS -->
+    <link href="css/plugins/morris.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="font-awesome-4.1.0/css/font-awesome.css" rel="stylesheet" type="text/css">
+    <!--Custom Drop down Css-->
+    <link rel="stylesheet" type="text/css" href="css/style6.css" />
+    <!-- Custom dropdown js-->
+    <script src="js/modernizr.custom.63321.js"></script>
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+<style type="text/css">
+
+*:focus {
+    outline: 0;
+}
+textarea:focus, input:focus{
+    outline: 0;
+
+}
+
+.return_button {
+    -moz-box-shadow:inset 0px 2px 0px 0px #cae3fc;
+    -webkit-box-shadow:inset 0px 2px 0px 0px #cae3fc;
+    box-shadow:inset 0px 2px 0px 0px #cae3fc;
+    box-shadow: inset 0 -4px 0 #bf8f3a;
+    background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, ##ffbf4e), color-stop(1, #ffbf4d) );
+    background:-moz-linear-gradient( center top, ##ffbf4e 5%, #ffbf4d  100% );
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffbf4d', endColorstr='#ffbf4e ');
+    background-color:#ffbf4d;
+    -webkit-border-top-left-radius:9px;
+    -moz-border-radius-topleft:9px;
+    border-top-left-radius:9px;
+    -webkit-border-top-right-radius:9px;
+    -moz-border-radius-topright:9px;
+    border-top-right-radius:9px;
+    -webkit-border-bottom-right-radius:9px;
+    -moz-border-radius-bottomright:9px;
+    border-bottom-right-radius:9px;
+    -webkit-border-bottom-left-radius:9px;
+    -moz-border-radius-bottomleft:9px;
+    border-bottom-left-radius:9px;
+    text-indent:0px;
+    display:inline-block;
+    color:#fff;
+    font-family:'Nevis',sans-serif;
+    font-size:22px;
+    font-weight:bold;
+    font-style:normal;
+    height:60px;
+    line-height:60px;
+    width:40%;
+    margin-right: 5%;
+    margin-left:5%;
+    text-decoration:none;
+    text-align:center;
+    text-shadow:0px 0px 0px #287ace;
+    float:right;
+}
+.return_button:hover {
+    background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #ffbf4d ), color-stop(1, #ffbf4d) );
+    background:-moz-linear-gradient( center top, #ffbf4d  5%, #449eff 100% );
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffbf4d ', endColorstr='#ffbf4e');
+    background-color:#ffbf4e ;
+}.return_button:active {
+    position:relative;
+    box-shadow: inset 0 0px 0 #bf8f3a;
+    top:1px;}
+
+hr.style-six {
+    border: 0;
+    height: 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    width:100%;
+    margin:0%;
+}
+hr.style-four {
+    height: 12px;
+    border: 0;
+    box-shadow: inset 0 5px 5px -5px rgba(0,0,0,0.5);
+    width:90%;
+}
+.search {
+    width:90%;
+    height:50px;
+    line-height: 50px;
+    font-size: 1.5em;
+    padding-left: 8%;
+    padding-bottom:2%;
+    margin-left: 6%;
+    margin-bottom:4%;
+    border:none;
+}
+body { background: #E9E9E9; }
+h2 { text-align: center; color: #CCC; }
+a {
+  display: block;
+  text-decoration: none;
+  width: 100%;
+  height: 100%;
+  color: #999;
+}
+
+a:hover { color: #333; }
+
+/* NAVIGATION */
+.navigation {
+  list-style: none;
+  padding: 0;
+  width: 286px; 
+  height: 50px; 
+  margin: 20px auto;
+  margin-top:0%;
+  background: #fff;
+  border:none;
+  position: relative; 
+  z-index: 100;
+  border:none;
+ 
+  line-height: 50px;
+  font-size: 2em;
+  text-decoration: none;
+
+}
+
+/*.navigation, .navigation a.main {
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+}
+
+.navigation:hover, .navigation:hover a.main {
+  border-radius: 4px 4px 0 0;
+  -webkit-border-radius: 4px 4px 0 0;
+  -moz-border-radius: 4px 4px 0 0;
+}*/
+
+.navigation a.main {
+  display: block; 
+  height: 50px;
+  font: bold 20px/40px 'Didact Gothic', sans-serif;  
+  text-decoration: none; 
+  color: #333;  
+  -webkit-transition: 0.2s ease-in-out;
+  -o-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+  position: relative;
+  z-index: 100;
+  padding-top: 2%;
+  padding-left: 10%;
+}
+
+.navigation:hover a.main {
+  color: #444;
+  background: #fafafa;
+  text-decoration: none; 
+}
+
+.navigation li { 
+  width: 286px; 
+  height: 40px;
+  background: #F7F7F7;
+  font: normal 18px/40px 'Didact Gothic', sans-serif !important; 
+  color: #999;
+  text-align: center;
+  vertical-align: middle;
+  margin: 0;
+  -webkit-transform-origin: 50% 0%;
+  -o-transform-origin: 50% 0%;
+  transform-origin: 50% 0%;
+  -webkit-transform: perspective(350px) rotateX(-90deg);
+  -o-transform: perspective(350px) rotateX(-90deg);
+  transform: perspective(350px) rotateX(-90deg);
+  box-shadow: 0px 2px 10px rgba(0,0,0,0.05);
+  -webkit-box-shadow: 0px 2px 10px rgba(0,0,0,0.05);
+  -moz-box-shadow: 0px 2px 10px rgba(0,0,0,0.05);
+    text-decoration: none; 
+}
+
+.navigation li:nth-child(even) { background: #F5F5F5; }
+.navigation li:nth-child(odd) { background: #EFEFEF; }
+
+.navigation li.n1 { 
+  -webkit-transition: 0.2s linear 0.8s;
+  -o-transition: 0.2s linear 0.8s;
+  transition: 0.2s linear 0.8s;
+    text-decoration: none; 
+}
+.navigation li.n2 {
+  -webkit-transition: 0.2s linear 0.6s;
+  -o-transition: 0.2s linear 0.6s;
+  transition: 0.2s linear 0.6s;
+    text-decoration: none; 
+}
+.navigation li.n3 {
+  -webkit-transition: 0.2s linear 0.4s;
+  -o-transition: 0.2s linear 0.4s;
+  transition: 0.2s linear 0.4s;
+    text-decoration: none; 
+}
+.navigation li.n4 { 
+  -webkit-transition:0.2s linear 0.2s;
+  -o-transition:0.2s linear 0.2s;
+  transition:0.2s linear 0.2s;
+    text-decoration: none; 
+}
+.navigation li.n5 {
+  border-radius: 0px 0px 4px 4px;
+  -webkit-transition: 0.2s linear 0s;
+  -o-transition: 0.2s linear 0s;
+  transition: 0.2s linear 0s;
+    text-decoration: none; 
+}
+
+.navigation:hover li {
+  -webkit-transform: perspective(350px) rotateX(0deg);
+  -o-transform: perspective(350px) rotateX(0deg);
+  transform: perspective(350px) rotateX(0deg);
+  -webkit-transition:0.2s linear 0s;
+  -o-transition:0.2s linear 0s;
+  transition:0.2s linear 0s;
+  text-decoration: none; 
+}
+.navigation:hover .n2 {
+  -webkit-transition-delay: 0.2s;
+  -o-transition-delay: 0.2s;
+  transition-delay: 0.2s;
+  text-decoration: none; 
+}
+.navigation:hover .n3 {
+  -webkit-transition-delay: 0.4s;
+  -o-transition-delay: 0.4s;
+  transition-delay: 0.4s;
+  text-decoration: none; 
+}
+.navigation:hover .n4 {
+  transition-delay: 0.6s;
+  -o-transition-delay: 0.6s;
+  transition-delay: 0.6s;
+  text-decoration: none; 
+}
+.navigation:hover .n5 {
+  -webkit-transition-delay: 0.8s;
+  -o-transition-delay: 0.8s;
+  transition-delay: 0.8s;
+  text-decoration: none; 
+}
+
+
+</style>
+
+</head>
+
+<body>
+
+         
+                    <div class="container">
+                    <div class="col-lg-4" style="font-family:'Didact Gothic'; margin-top:0%; margin-right:0%; margin-left:0%; float:right;">
+                        <div class="panel panel-default">
+                            <div class="panel-heading" style="background:linear-gradient(0deg, rgba(0, 126, 233, 1) 0%, rgba(68, 158, 255, 1) 100%); color:#fff;">
+                                <a href="#"><img src="svg/Brandlink_icons-21.svg" style="width:30px; vertical-align:middle; padding-top:6%; float:left; margin-left:5%;"></a> <h1 class="panel-title" style="text-align:center; font-size:2em; height:70px; vertical-align:middle; padding-top:5%; padding-right:15%;">Address Entry</h1>
+                            </div>
+                            <div class="panel-body">
+                                    <form>
+<p class="label" style="color:#333; padding-left:5%;">Address 1</p>
+<input class="search" type="text" placeholder="Street number and name...">
+</form>
+<hr class="style-six"/>
+<br>
+                                
+                                    <form>
+<p class="label" style="color:#333; padding-left:5%;">Address 2</p>
+<input class="search" type="text" placeholder="Suite or Apt number...">
+</form>
+<hr class="style-six"/>
+        <br>
+<!-- Drop Down menu Test Zone-->
+        <!-- <div class="container"> --> 
+            <!-- <section class="main">
+                <!-- <div class="fleft"> -->
+                    <!-- <select id="cd-dropdown" class="cd-select">
+                        <option value="-1" selected>Choose your prize</option>
+                        <option value="1" class="icon-camera">Camera</option>
+                        <option value="2" class="icon-diamond">Diamonds</option>
+                        <option value="3" class="icon-rocket">Spaceship</option>
+                        <option value="4" class="icon-star">Star</option>
+                        <option value="5" class="icon-clock">Time</option>
+                    </select> -->
+               <!--  </div> -->
+            <!--</section>
+        <!-- </div> -->
+
+                                    <form>
+<p class="label" style="color:#333; padding-left:5%;">City</p>
+<input class="search" type="text" placeholder="City name...">
+</form>
+<hr class="style-six"/>
+<br>
+                                    <form>
+<p class="label" style="color:#333; padding-left:5%;">State</p>
+<input class="search" type="text" placeholder="State name...">
+</form>
+<hr class="style-six"/>
+<br>
+                                    <form>
+<p class="label" style="color:#333; padding-left:5%;">Zip</p>
+<input class="search" type="text" placeholder="Zip code...">
+</form>
+<hr class="style-six"/>                                    
+                                
+                                <br>
+                                <br>
+                                <div style="margin-right:5%; margin-left:20%;"><i class="fa fa-lg"><a href="#"><img src="svg/Brandlink_icons-03.svg" style="width:36px; padding-left:5%; padding-right:5%;"></a></i> <i class="fa fa-lg"><a href="#"><img src="svg/Brandlink_icons-14.svg" style="width:36px; padding-left:5%; padding-right:5%;"></a></i> <i class="fa fa-lg"><a href="#"><img src="svg/Brandlink_icons-17.svg" style="width:36px; padding-left:5%; padding-right:5%;"></a></i> <i class="fa fa-lg"><a href="#"><img src="svg/Brandlink_icons-20.svg" style="width:36px; padding-left:5%; padding-right:5%;"></a></i></div>
+                               <br>
+                                   <a href="#"><h1 class="return_button">Validate</h1></a>
+                                </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+         
+
+
+    <!-- jQuery Version 1.11.0 -->
+    <script src="js/jquery-1.11.0.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+    
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    
+    <script type="text/javascript" src="js/jquery.dropdown.js"></script>
+    
+    <script type="text/javascript">
+                
+        $( function() {
+                
+            $( '#cd-dropdown' ).dropdown( {
+                gutter : 5,
+                stack : false,
+                delay : 50,
+                slidingIn : 50
+            } );
+
+        });
+
+    </script>
+
+</body>
+
+</html>
