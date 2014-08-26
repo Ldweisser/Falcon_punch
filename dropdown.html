@@ -11,7 +11,6 @@
   <link href="font-awesome-4.1.0/css/font-awesome.css" rel="stylesheet" type="text/css">
 
   <style>
-
     body {
       margin: 0;
       padding: 2%;
@@ -76,9 +75,6 @@
           .panel_item_title.active:hover {
             background: #eee;
           }
-        .panel_item_content {
-          display: none;
-        }
 
         .panel_item_content label {
           display: block;
@@ -88,7 +84,6 @@
             background: #f5f5f5;
             cursor: pointer;
           }
-
   </style>
 </head>
 <body>
@@ -157,22 +152,55 @@
 
   <!-- dddropdown -->
   <script>
-    // ------------------------------------------------------------
-    // dddropdown
-       console.log('%c✔ dddropdown', 'color: #2379cf');
-    // ------------------------------------------------------------
+    (function($) {
 
-    (function ($) {
+      // Hide all the checkboxes
+
+      $('.panel_item_input').hide();
+
+      // Show checkboxes for clicked title
 
       $('.panel_item_title').click(function() {
-        $(this)
-          .toggleClass('active')
-          .find('.fa-caret-down').toggleClass('fa-caret-down')
-          .next('.panel_item_content').toggle();
+
+        // Do this stuff if the panel is closed
+
+        if (!$(this).hasClass('active')) {
+          $(this)
+            .addClass('active')
+            .find('.fa-caret-down')
+            .addClass('fa-caret-up')
+            .end()
+            .next('.panel_item_content')
+            .find('.panel_item_input')
+            .show();
+        }
+
+        // Do this stuff if the panel is already open
+
+        else {
+          $(this)
+            .removeClass('active')
+            .find('.fa-caret-down')
+            .removeClass('fa-caret-up')
+            .end()
+            .next('.panel_item_content')
+            .find('.panel_item_input input')
+            .not(':checked')
+            .parent()
+            .parent('.panel_item_input')
+            .hide();
+        }
+      });
+
+      // If the panel is closed and you uncheck a checkbox, hide it
+
+      $('.panel_item_input').click(function() {
+        if ($(this).find('input').not(':checked') && !$(this).parent('.panel_item_content').siblings('.panel_item_title').hasClass('active')) {
+          $(this).hide();
+        }
       });
 
     })(jQuery);
-
   </script>
 
 </body>
